@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title></title>
+    <style>
+    body{font-size: 250px; padding-top: 13px; color:red; backround: rgb(95, 7, 7);}
+    </style>
+    <script>
+    game=x=>{
+    r=x=>Math.floor(x*Math.random());
+    a=r(10);
+    b=r(10);
+    s="+-*"[r(3)];
+    c=eval(a+s+b);
+    i=prompt("How much is "+a+s+b+"?");
+    c==i?(
+      alert("That is the right anwser!!!"),
+      alert("You have succesfully anwsered the question!!"),
+      body.style.color="green",
+      body.style.background="#1a471a",
+      streak.innerText=+streak.innerText+1
+    ):(
+      alert("That is not the right anwser, it is "+c),
+      alert("Get a new math teacher!!!"),
+      body.style.color="red",
+      body.style.background="#5f0707",
+      streak.innerText=""
+    )
+    }
+    </script>
+  </head>
+  <body id="body" onclick="game()">
+  streak
+  <span id="streak"></span>/10 Click here
+  </body>
+</html>
